@@ -9,6 +9,7 @@
       function squareclicked(square)
       //squareclicked is a function that is called whenever a button is clicked.
       {
+        var status = document.getElementById('status');
         var value = square.value;
         if(value !='X' && value !='O')
         {
@@ -16,11 +17,14 @@
           {
             square.value = 'X';
             xTurn = false;
+            status.innerHTML = 'O\'s turn';
+
           }
           else
           {
             square.value = 'O';
             xTurn = true;
+            status.innerHTML = 'X\'s turn';
           }
         }
         else
@@ -45,6 +49,7 @@
     <input type="button" id="6" value="" onclick="squareclicked(this);">
     <input type="button" id="7" value="" onclick="squareclicked(this);">
     <input type="button" id="9" value="" onclick="squareclicked(this);">
-    <br>  
+    <br>
+    <p id="status">X's turn</p>
   </body>
 </html>
