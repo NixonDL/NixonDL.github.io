@@ -12,9 +12,19 @@
         var value = square.value;
         if(value !='X' && value !='O')
         {
-          if(xTurn){
+          if(xTurn)
+          {
             square.value = 'X';
-          }        }
+            xTurn = false;
+          }
+          else
+          {
+            square.value = 'O';
+            xTurn = true;
+          }
+        }
+        else
+          alert('That square has already been played.');
     
       }
      
