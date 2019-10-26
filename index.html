@@ -6,6 +6,17 @@
     <title>Science Project 2019: MiniMax Tic-Tac-Toe</title>
     <script type="text/javascript">
       var xTurn = true;
+      //beginning of newgame function
+      function newgame(){
+        var status = document.getElementById('status');
+        xTurn = true;
+        status.innnerHTML = 'X\'s turn';
+        for(var x = 0;x<9;x++){
+          document.getElementById(x.toString()).value = '';
+        }
+      }
+      // end of newgame function
+      //beginning of squareclicked function
       function squareclicked(square)
       //squareclicked is a function that is called whenever a button is clicked.
       {
@@ -31,6 +42,8 @@
           alert('That square has already been played.');
     
       }
+      //end of squareclicked function
+      
      
     </script>
       
@@ -51,5 +64,6 @@
     <input type="button" id="9" value="" onclick="squareclicked(this);">
     <br>
     <p id="status">X's turn</p>
+    <input type="button" id="newgame" value="New Game" onclick="newgame();">
   </body>
 </html>
