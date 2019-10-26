@@ -6,6 +6,34 @@
     <title>Science Project 2019: MiniMax Tic-Tac-Toe</title>
     <script type="text/javascript">
       var xTurn = true;
+      var gameOver = false;
+      var numMoves = 0;
+      //beginning of checkWin function
+      function checkWin(){
+        var status = document.getElementById('status');
+        var val0;
+        var val1;
+        var val2;
+        // check columns
+        for(var x = 0;x<9;x=x+3){
+          val0 =document.getElementById(x.toString()).value;
+          val1 =document.getElementById((x+1).toString()).value;
+          val2 =document.getElementById((x+2).toString()).value;
+          if(val0 == 'X' && val1 == 'X' && val2 == 'X'){
+            status.innerHTML = "X WINS!";
+            return true;
+          }
+          else if(val0 == 'O' && val1 == 'O' && val2 == 'O'){
+            status.innerHTML = "O WINS!";
+            return true;
+          }
+          
+          
+        }
+      }
+      
+      
+      //end of checkWin function
       //beginning of newgame function
       function newgame(){
         var status = document.getElementById('status');
