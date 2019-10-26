@@ -5,9 +5,17 @@
     <meta charset="utf-8">
     <title>Science Project 2019: MiniMax Tic-Tac-Toe</title>
     <script type="text/javascript">
+      var xTurn = true;
       function squareclicked(square)
       //squareclicked is a function that is called whenever a button is clicked.
-      {square.value = 'X';
+      {
+        var value = square.value;
+        if(value !='X' && value !='O')
+        {
+          if(xTurn){
+            square.value = 'X';
+          }        }
+    
       }
      
     </script>
