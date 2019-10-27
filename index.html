@@ -99,7 +99,7 @@
             numMoves++;
             square.value = 'X';
             xTurn = false;
-            computerTurn = !compterTurn;
+            computerTurn = !computerTurn;
             status.innerHTML = 'O\'s turn';
 
           }
@@ -152,5 +152,6 @@
     <br>
     <p id="status">X's turn</p>
     <input type="button" id="newgame" value="New Game" onclick="newgame();">
+    <script type="text/javascript" src="minimax.js"></script>
   </body>
 </html>
