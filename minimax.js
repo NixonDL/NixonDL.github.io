@@ -1,7 +1,22 @@
 //beginning of miniMax function
-function miniMax(board, player){
+function miniMax(board, isPlayerX){
   //Check if board already has winner. If winner is equal to player, then return 1. Else, return -1.
-  
+  var isWinner = checkBoardForWin(board);
+  if(isWinner.hasWinner){
+    if(xWins && isPlayerX){
+      return 1;
+      
+    }
+    else if(xWins && !isPlayerX){
+      return -1;
+    }
+    else if(oWins && isPlayerX){
+      return -1;
+    }
+    else{
+      return 1;
+    }
+  }
 } //End of miniMax function
 //Beginning of checkBoardForWin function 
 function checkBoardForWin(board){
