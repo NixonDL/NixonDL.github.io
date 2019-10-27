@@ -1,3 +1,30 @@
+//beginning of makeComputerMove function
+function makeComputerMove(){
+  var board = [];
+  for(var x = 0; x< 9; x++){
+    var value = document.getElementById((x).toString());
+    board.push(value);
+    
+  }
+  var score = -2;
+  var move = - 1;
+  for(var x = 0; x< 9; x++){
+    if(!(board[x]=='X' || board[x]=='O')){
+     var boardWithNewMove = Array.from(board);
+      boardWithNewMove[x] = 'O';
+      var scoreForTheMove = -1*miniMax(boardWithNewMove, true);
+      if(scoreForTheMove > score){
+        score = scoreForTheMove;
+        move = x;
+      } 
+    }
+  }
+  document.getElementById((move).toString());
+  xTurn = true;
+  computerTurn = false;
+}
+
+//end of makeComputerMove function
 //beginning of miniMax function
 function miniMax(board, isPlayerX){
   //Check if board already has winner. If winner is equal to player, then return 1. Else, return -1.
