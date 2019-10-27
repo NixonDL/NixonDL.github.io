@@ -2,7 +2,7 @@
 function makeComputerMove(){
   var board = [];
   for(var x = 0; x< 9; x++){
-    var value = document.getElementById((x).toString());
+    var value = document.getElementById((x).toString()).value;
     board.push(value);
     
   }
@@ -19,7 +19,7 @@ function makeComputerMove(){
       } 
     }
   }
-  document.getElementById((move).toString());
+  document.getElementById((move).toString()).value = 'O';
   xTurn = true;
   computerTurn = false;
 }
