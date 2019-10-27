@@ -73,6 +73,8 @@
       function newgame(){
         var status = document.getElementById('status');
         xTurn = true;
+        numMoves = 0;
+        gameOver = false;
         status.innnerHTML = 'X\'s turn';
         for(var x = 0;x<9;x++){
           document.getElementById(x.toString()).value = '';
@@ -85,10 +87,15 @@
       {
         var status = document.getElementById('status');
         var value = square.value;
+        if(gameOver){
+          alert("The game is already over.");
+          return;
+        }
         if(value !='X' && value !='O')
         {
           if(xTurn)
           {
+            numMoves++;
             square.value = 'X';
             xTurn = false;
             status.innerHTML = 'O\'s turn';
@@ -96,6 +103,7 @@
           }
           else
           {
+            numMoves++;
             square.value = 'O';
             xTurn = true;
             status.innerHTML = 'X\'s turn';
@@ -103,7 +111,15 @@
         }
         else
           alert('That square has already been played.');
-    
+    var winner = checkWin();
+        if(!winner){
+          //check to see if there is a tie
+          if(numMoves == 9){
+            status.innerHTML = 'Tie Game!';
+          }
+        }
+        else
+          gameOver = true;
       }
       //end of squareclicked function
       
