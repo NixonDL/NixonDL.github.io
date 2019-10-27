@@ -8,6 +8,7 @@
       var xTurn = true;
       var gameOver = false;
       var numMoves = 0;
+      var computerTurn = false;
       //beginning of checkWin function
       function checkWin(){
         var status = document.getElementById('status');
@@ -98,6 +99,7 @@
             numMoves++;
             square.value = 'X';
             xTurn = false;
+            computerTurn = !compterTurn;
             status.innerHTML = 'O\'s turn';
 
           }
@@ -116,10 +118,16 @@
           //check to see if there is a tie
           if(numMoves == 9){
             status.innerHTML = 'Tie Game!';
+            return;
           }
         }
-        else
+        else{
           gameOver = true;
+          return;
+        }
+        if(computerTurn){
+          makeComputerMove();
+        }
       }
       //end of squareclicked function
       
