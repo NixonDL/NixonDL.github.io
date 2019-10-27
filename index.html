@@ -127,6 +127,19 @@
         }
         if(computerTurn){
           makeComputerMove();
+          numMoves++;
+          winner = checkWin();
+        if(!winner){
+          //check to see if there is a tie
+          if(numMoves == 9){
+            status.innerHTML = 'Tie Game!';
+            return;
+          }
+        }
+        else{
+          gameOver = true;
+          return;
+        }
         }
       }
       //end of squareclicked function
