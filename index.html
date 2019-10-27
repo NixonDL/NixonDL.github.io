@@ -43,9 +43,9 @@
           }     
         }
         //check top left to lower right diagonal
-        val0 =document.getElementById(0.toString()).value;
-        val1 =document.getElementById(4.toString()).value;
-        val2 =document.getElementById(8.toString()).value;
+        val0 =document.getElementById((0).toString()).value;
+        val1 =document.getElementById((4).toString()).value;
+        val2 =document.getElementById((8).toString()).value;
         if(val0 == 'X' && val1 == 'X' && val2 == 'X'){
           status.innerHTML = "X WINS!";
           return true;
@@ -55,9 +55,9 @@
           return true;
         }
         //check lower left to top right diagonal
-        val0 =document.getElementById(6.toString()).value;
-        val1 =document.getElementById(4.toString()).value;
-        val2 =document.getElementById(2.toString()).value;
+        val0 =document.getElementById((6).toString()).value;
+        val1 =document.getElementById((4).toString()).value;
+        val2 =document.getElementById((2).toString()).value;
         if(val0 == 'X' && val1 == 'X' && val2 == 'X'){
           status.innerHTML = "X WINS!";
           return true;
