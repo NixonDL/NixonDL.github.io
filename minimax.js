@@ -17,6 +17,24 @@ function miniMax(board, isPlayerX){
       return 1;
     }
   }
+  //Try every move and recursively calculate a minimax score for it.
+  var move = -1;
+  var score = -2;
+  for(var x = 0;x < 9; x++){
+    if(!(board[x]=='X' || board[x]=='O')){
+      var boardWithNewMove = Array.from(board);
+      boardWithNewMove[x] = isPlayerX ? 'X':'O';
+      var scoreForTheMove = -1*miniMax(boardWithNewMove, !isPlayerX);
+      if(scoreForTheMove > score){
+        score = scoreForTheMove;
+        move = x;
+      }
+    }
+  }
+  if(move == -1 ){
+    return 0;
+  }
+  return score;
 } //End of miniMax function
 //Beginning of checkBoardForWin function 
 function checkBoardForWin(board){
